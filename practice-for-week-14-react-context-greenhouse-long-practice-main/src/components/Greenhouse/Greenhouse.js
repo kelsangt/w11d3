@@ -10,15 +10,12 @@ import { useTheme } from '../../context/ThemeContext';
 
 function Greenhouse() {
   const {themeName, setThemeName} = useTheme();
-  // let testvariable = dayImage
   let varImage;
   setThemeName("night")
   if (themeName === "day"){
     varImage = dayImage;
-    // testvariable = nightImage;
   } else {
     varImage = nightImage;
-    // testvariable= dayImage;
   }
   return (
     <section>
