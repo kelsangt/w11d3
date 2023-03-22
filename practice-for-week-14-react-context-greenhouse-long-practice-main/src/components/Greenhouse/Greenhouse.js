@@ -9,17 +9,21 @@ import ThemeProvider from '../../context/ThemeContext';
 import { useTheme } from '../../context/ThemeContext';
 
 function Greenhouse() {
-  const {themeName} = useTheme();
-  let testvariable = dayImage
-  if (themeName === "night"){
-    testvariable = nightImage;
+  const {themeName, setThemeName} = useTheme();
+  // let testvariable = dayImage
+  let varImage;
+  setThemeName("night")
+  if (themeName === "day"){
+    varImage = dayImage;
+    // testvariable = nightImage;
   } else {
-    testvariable= dayImage;
+    varImage = nightImage;
+    // testvariable= dayImage;
   }
   return (
     <section>
       <img  className='greenhouse-img'
-            src={testvariable}
+            src={varImage}
             alt='greenhouse' 
       />
       <LightSwitch />
